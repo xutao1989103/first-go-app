@@ -1,8 +1,8 @@
 package main
 
 import (
+	"./pkg/signals"
 	"flag"
-	"github.com/xutao1989103/first-go-app/pkg/signals"
 	kubeinformers "k8s.io/client-go/informers"
 	"k8s.io/client-go/kubernetes"
 	"k8s.io/client-go/tools/clientcmd"
