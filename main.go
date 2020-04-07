@@ -1,9 +1,9 @@
 package main
 
 import (
-	"./pkg/signals"
 	"flag"
-	kubeinformers "k8s.io/client-go/informers"
+	"github.com/xutao1989103/first-go-app/pkg/signals"
+	kubeInformers "k8s.io/client-go/informers"
 	"k8s.io/client-go/kubernetes"
 	"k8s.io/client-go/tools/clientcmd"
 	"time"
@@ -30,7 +30,7 @@ func main() {
 
 	}
 
-	kubeInformerFactory := kubeinformers.NewSharedInformerFactory(kubeClient, time.Second*30)
+	kubeInformerFactory := kubeInformers.NewSharedInformerFactory(kubeClient, time.Second*30)
 
 	controller := NewController(kubeClient, kubeInformerFactory.Apps().V1().Deployments())
 
